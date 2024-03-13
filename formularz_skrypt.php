@@ -10,10 +10,11 @@ $pesel = $_POST['pesel'];
 $nr_telefonu = ['nr_telefonu'];
 $mail = $_POST['mail'];
 
-$zapyt = "INSERT INTO klient VALUES (null,'$nazwisko','$imie','$kod','$miejscowosc','$ulica',
-'$nr_domu',$pesel,$nr_telefonu,'$mail')";
-$wynik = mysqli_query($polaczenie,$zapyt);
-echo "wstawiono ".mysqli_affected_rows($polaczenie)."rekordów.";
+$zapyt = "INSERT INTO klient VALUES (null,$nazwisko,'$imie','$kod','$miejscowosc','$ulica','$nr_domu',$pesel,$nr_telefonu,'$mail')";
+
+// $zapyt = "INSERT INTO klient VALUES (null,'$nazwisko','$imie','$kod','$miejscowosc','$ulica','$nr_domu',$pesel,$nr_telefonu,'$mail')";
+// $wynik = mysqli_query($polaczenie,$zapyt);
+// echo "wstawiono ".mysqli_affected_rows($polaczenie)."rekordów.";
 
 
 
