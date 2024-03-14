@@ -1,0 +1,8 @@
+<?php
+
+$polaczenie = mysqli_connect('localhost','root','','ksiegarnia');
+
+// $zapyt1 = "DELETE FROM klient WHERE Id_klienta=3 or Id_klienta=4";
+// $wynik1 = mysqli_query($polaczenie,$zapyt1);
+// echo "usunieto ".mysqli_affected_rows($polaczenie)."<br>";
+?>
