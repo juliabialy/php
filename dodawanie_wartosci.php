@@ -1,12 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
 <?php
+
 $polaczenie = mysqli_connect('localhost','root','','ksiegarnia');
+$zapyt1 = "SELECT * FROM klient WHERE Id_klienta=1";
+$wynik = mysqli_query($polaczenie,$zapyt1);
+$tab1 = mysqli_fetch_array($wynik);
 
-
-
-
-// $zapyt2 = "INSERT INTO klient VALUES
-// (null, 'Bialy','Julia','33-100','Tarnów','Falata','10',07345678901,123123123,'j.b@wp.pl'),
-// (null,'Nowak','Ola','12-123','Marcin','Szujski','13',12345678901,123123123,'jc.p@pl')";
-// $wynik = mysqli_query($polaczenie,$zapyt2);
-// echo "dodano do listy klientów ".mysqli_affected_rows($polaczenie)." nowcyh osób";
 ?>
+
+        <form action = "dodawanie.php" method = "post" enctype="multipart/form-data"> 
+            <fieldset>
+                <legend>Formularz Rejestracji</legend>
+                Nazwisko:<br>
+                <input type="text" name = "nazwisko" 
+                value='<?php echo $tab1['Nazwisko']; ?>'>
+                <br>
+        
+                Imie:<br>
+                <input type="text" name = "imie"
+                value='<?php echo $tab1['Imie']; ?>'>
+                <br>
+
+                Kod pocztowy:<br>
+                <input type="text" name = "Kod" 
+                value='<?php echo $tab1['Kod_pocztowy']; ?>'>
+                <br>
+
+                Miasto:<br>
+                <input type="text" name = "miejscowosc"
+                value='<?php echo $tab1['Nazwisko']; ?>'>
+                <br>
+
+                Ulica:<br>
+                <input type="text" name = "ulica"
+                value='<?php echo $tab1['Ulica']; ?>'>
+                <br>
+
+                Nr_domu:<br>
+                <input type="number" name = "nr_domu"
+                value='<?php echo $tab1['Nr_domu']; ?>'>
+                <br>
+
+                Pesel:<br>
+                <input type="text" name = "pesel" 
+                value='<?php echo $tab1['PESEL']; ?>'>
+                <br>
+
+                Nr_telefonu:<br>
+                <input type="number" name = "nr_telefonu" 
+                value='<?php echo $tab1['Telefon']; ?>'>
+                <br>
+
+                Mail:<br>
+                <input type="email" name = "mail" 
+                value='<?php echo $tab1['AdresEmail']; ?>'>
+                <br>
+                <br>
+                <button type="submit">Submit</button>
+                <button type="reset">Clear</button>
+
+            </fieldset>
+        </form>
+    </body>
+</html>
